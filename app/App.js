@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import styles from './App.css';
-import Name from './Name/Name';
+import Name from './components/Name/Name';
 
 const App = () => (
   <div className={styles.mainContainer}>
