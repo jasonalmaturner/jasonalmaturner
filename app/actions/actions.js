@@ -12,6 +12,13 @@ export function selectUser(user = 'jasonalmaturner') {
   };
 }
 
+export function invalidateUser(user = 'jasonalmaturner') {
+  return {
+    type: INVALIDATE_USER,
+    user,
+  };
+}
+
 export function requestEvents(user = 'jasonalmaturner') {
   return {
     type: REQUEST_EVENTS,
@@ -19,11 +26,18 @@ export function requestEvents(user = 'jasonalmaturner') {
   };
 }
 
-export function receiveEvents(user, json) {
+export function receiveEvents(user = 'jasonalmaturner', json) {
   return {
     type: RECEIVE_EVENTS,
     user,
     posts: json.data.children.map(child => child.data),
     receivedAt: Date.now(),
+  };
+}
+
+function fetchEvents(user = 'jasonalmaturner') {
+  return dispatch => {
+    dispatch(requestEvents(user));
+    axios.get(`api/events?user=${user}`).then(res => dispatch(receiveEvents(user, res)));
   };
 }
