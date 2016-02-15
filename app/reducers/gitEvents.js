@@ -63,3 +63,5 @@ const rootReducer = combineReducers({
   eventsByUser,
   selectedUser,
 });
+
+export default rootReducer;
