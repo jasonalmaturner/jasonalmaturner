@@ -59,9 +59,9 @@ function postsByUser(state = {}, action) {
   }
 }
 
-const rootReducer = combineReducers({
+const gitReducer = combineReducers({
   eventsByUser,
   selectedUser,
 });
 
-export default rootReducer;
+export default gitReducer;
