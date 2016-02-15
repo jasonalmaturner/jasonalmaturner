@@ -26,11 +26,11 @@ export function requestEvents(user = 'jasonalmaturner') {
   };
 }
 
-export function receiveEvents(user = 'jasonalmaturner', json) {
+export function receiveEvents(user = 'jasonalmaturner', events) {
   return {
     type: RECEIVE_EVENTS,
     user,
-    posts: json.data.children.map(child => child.data),
+    posts: events,
     receivedAt: Date.now(),
   };
 }
@@ -38,6 +38,6 @@ export function receiveEvents(user = 'jasonalmaturner', json) {
 function fetchEvents(user = 'jasonalmaturner') {
   return dispatch => {
     dispatch(requestEvents(user));
-    axios.get(`api/events?user=${user}`).then(res => dispatch(receiveEvents(user, res)));
+    axios.get(`api/events?user=${user}`).then(res => dispatch(receiveEvents(user, res.data)));
   };
 }
