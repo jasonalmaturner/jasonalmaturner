@@ -30,7 +30,7 @@ export function receiveEvents(user = 'jasonalmaturner', events) {
   return {
     type: RECEIVE_EVENTS,
     user,
-    posts: events,
+    events,
     receivedAt: Date.now(),
   };
 }
