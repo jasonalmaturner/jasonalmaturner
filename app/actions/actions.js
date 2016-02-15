@@ -41,3 +41,22 @@ function fetchEvents(user = 'jasonalmaturner') {
     axios.get(`api/events?user=${user}`).then(res => dispatch(receiveEvents(user, res.data)));
   };
 }
+
+function shouldFetchEvents(state, user) {
+  const posts = state.eventsByUser[user];
+  if (!posts) {
+    return true;
+  } else if (posts.isFetching) {
+    return false;
+  } else {
+    return posts.didInvalidate;
+  }
+}
+
+export function fetchEventsIfNeeded(user) {
+  return (dispatch, getState) => {
+    if (shouldFetchEvents(getState(), user)) {
+      return dispatch(fetchEvents(users));
+    }
+  };
+}
