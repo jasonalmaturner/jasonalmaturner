@@ -56,7 +56,7 @@ function shouldFetchEvents(state, user) {
 export function fetchEventsIfNeeded(user) {
   return (dispatch, getState) => {
     if (shouldFetchEvents(getState(), user)) {
-      return dispatch(fetchEvents(users));
+      return dispatch(fetchEvents(user));
     }
   };
 }

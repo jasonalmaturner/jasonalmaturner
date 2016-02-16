@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import { REQUEST_EVENTS, RECEIVE_EVENTS, SELECT_USER, INVALIDATE_USER } from '../actions/actions';
 
-function selectedUser(state = 'jasonalmaturner', action) {
+export function selectedUser(state = 'jasonalmaturner', action) {
   switch (action.type) {
     case SELECT_USER:
       return action.user;
@@ -46,7 +46,7 @@ function events(state = {
   }
 }
 
-function eventsByUser(state = {}, action) {
+export function eventsByUser(state = {}, action) {
   switch (action.type) {
     case INVALIDATE_USER:
     case RECEIVE_EVENTS:
@@ -59,9 +59,7 @@ function eventsByUser(state = {}, action) {
   }
 }
 
-const gitReducer = combineReducers({
-  eventsByUser,
-  selectedUser,
-});
-
-export default gitReducer;
+// const gitReducer = combineReducers({
+//   eventsByUser,
+//   selectedUser,
+// });

@@ -1,8 +1,9 @@
-import gitReducer from './gitReducer';
+import { eventsByUser, selectedUser } from './gitReducer';
 import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers({
-  gitReducer,
+  eventsByUser,
+  selectedUser,
 });
 
 export default rootReducer;
