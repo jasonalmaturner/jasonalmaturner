@@ -46,7 +46,7 @@ function events(state = {
   }
 }
 
-function postsByUser(state = {}, action) {
+function eventsByUser(state = {}, action) {
   switch (action.type) {
     case INVALIDATE_USER:
     case RECEIVE_EVENTS:
