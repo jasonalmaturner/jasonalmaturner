@@ -7,10 +7,10 @@ function isPush(event) {
   }
 
   return event.payload.commits.map(commit => (
-    <div>
+    <ul key={commit.sha}>
       <a href={`mailto:${commit.email}`}>{commit.name}</a>
       <a href={commit.url}>{commit.message}</a>
-    </div>
+    </ul>
   ));
 }
 
