@@ -1,4 +1,4 @@
 # jasonalmaturner
 My personal site
 
-Run `npm install`, 'webpack -w`, and `npm start`.
+Run `npm install`, `webpack -w`, and `npm start`.
