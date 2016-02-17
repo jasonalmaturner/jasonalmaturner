@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { selectUser, fetchEventsIfNeeded, invalidateUser } from '../../actions/actions';
+import ChangeUser from '../../components/ChangeUser/ChangeUser';
+import DisplayEvents from '../../components/DisplayEvents/DisplayEvents';
 
 class GitEvents extends Component {
   constructor(props) {
@@ -37,8 +39,7 @@ class GitEvents extends Component {
     const { selectedUser, events, isFetching, lastUpdated } = this.props;
     return (
       <div>
-        Test
-        {selectedUser}
+        {events.length > 0 && <DisplayEvents theEvents={events} />}
       </div>
     );
   }
