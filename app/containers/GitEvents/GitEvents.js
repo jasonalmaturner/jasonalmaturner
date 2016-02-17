@@ -39,6 +39,7 @@ class GitEvents extends Component {
     const { selectedUser, events, isFetching, lastUpdated } = this.props;
     return (
       <div>
+        <ChangeUser searchUser={this.handleChange} handleClick={this.handleRefreshClick} />
         {events.length > 0 && <DisplayEvents theEvents={events} />}
       </div>
     );
@@ -55,7 +56,6 @@ GitEvents.propTypes = {
 
 function mapStateToProps(state) {
   const { selectedUser, eventsByUser } = state;
-  console.log(state);
   const {
     isFetching,
     lastUpdated,
