@@ -1,6 +1,19 @@
 import React, { PropTypes } from 'react';
 import styles from './DisplayEvents.css';
 
+function isPush(event) {
+  if (!event.payload.commits) {
+    return JSON.stringify(event.payload);
+  }
+
+  return event.payload.commits.map(commit => (
+    <div>
+      <a href={`mailto:${commit.email}`}>{commit.name}</a>
+      <a href={commit.url}>{commit.message}</a>
+    </div>
+  ));
+}
+
 const DisplayEvents = ({ theEvents }) => {
   if (!theEvents[0]) {
     return <div>Loading</div>;
@@ -15,7 +28,7 @@ const DisplayEvents = ({ theEvents }) => {
         {theEvent.repo.name}
       </a>
       <div>
-        {JSON.stringify(theEvent.payload)}
+        {isPush(theEvent)}
       </div>
     </ul>
   );
