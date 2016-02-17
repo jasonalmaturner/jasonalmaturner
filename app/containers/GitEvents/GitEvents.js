@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { selectUser, fetchEventsIfNeeded, invalidateUser } from '../../actions/actions';
 import ChangeUser from '../../components/ChangeUser/ChangeUser';
 import DisplayEvents from '../../components/DisplayEvents/DisplayEvents';
+import styles from './GitEvents.css';
 
 class GitEvents extends Component {
   constructor(props) {
@@ -38,7 +39,7 @@ class GitEvents extends Component {
   render() {
     const { selectedUser, events, isFetching, lastUpdated } = this.props;
     return (
-      <div>
+      <div className={styles.mainContainer}>
         <ChangeUser searchUser={this.handleChange} handleClick={this.handleRefreshClick} />
         {events.length > 0 && <DisplayEvents theEvents={events} />}
       </div>

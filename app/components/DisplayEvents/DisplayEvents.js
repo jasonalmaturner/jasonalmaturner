@@ -7,8 +7,16 @@ const DisplayEvents = ({ theEvents }) => {
   }
 
   const mappedEvents = theEvents.map((theEvent, i) =>
-    <ul key={i}>
-      {JSON.stringify(theEvent)}
+    <ul key={theEvent.id}>
+      <div>
+        {theEvent.type}
+      </div>
+      <a href={theEvent.repo.url}>
+        {theEvent.repo.name}
+      </a>
+      <div>
+        {JSON.stringify(theEvent.payload)}
+      </div>
     </ul>
   );
   return (
