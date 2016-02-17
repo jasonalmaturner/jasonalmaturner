@@ -11,8 +11,10 @@ function isPush(event, repo) {
 
   return event.payload.commits.map(commit => (
     <ul key={commit.sha}>
-      <a href={`mailto:${commit.author.email}`}>{commit.author.name}</a>
-      <a target='_blank' href={`https://github.com/${repo}/commit/${commit.sha}`}>{commit.message}</a>
+      {commit.author.name}
+      <p>
+        <a target='_blank' href={`https://github.com/${repo}/commit/${commit.sha}`}>{commit.message}</a>
+      </p>
     </ul>
   ));
 }
