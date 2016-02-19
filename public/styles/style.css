@@ -1,5 +1,5 @@
 /*http://paletton.com/#uid=72P0u0kllllaFw0g0qFqFg0w0aF*/
-
+/*http://loading.io/*/
 * {
   font-family: 'Open Sans', sans-serif;
 }
@@ -12,4 +12,11 @@ html, body {
 .app-container {
   height: 100%;
   width: 100%;
+}
+
+input {
+  border-radius: 10px;
+  margin: 3px;
+  padding: 3px;
+  text-align: center;
 }

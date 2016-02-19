@@ -10,12 +10,12 @@ const ChangeUser = ({ searchUser, handleClick }) => {
         searchUser(input.value);
         input.value = '';
       }}>
-        <input ref={node => {
+        <input className={styles.input} ref={node => {
 
           input = node;
         }
         } type='text' placeholder='Enter GitHub username' />
-      <input type='submit' value='Submit'/>
+      <input className={styles.inputButton} type='submit' value='Submit'/>
       </form>
     </div>
   );

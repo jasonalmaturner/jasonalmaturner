@@ -1,0 +1,12 @@
+.input {
+  border-width: thin;
+  border-color: #550000;
+  border-style: solid;
+  width: 225px;
+}
+
+.inputButton {
+  background-color: #550000;
+  border: none;
+  color: white;
+}

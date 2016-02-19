@@ -16,7 +16,7 @@ const DisplayEvents = ({ theEvents }) => {
   );
 
   return (
-    <div>
+    <div className={styles.eventsContainer}>
       {mappedEvents}
     </div>
   );

@@ -40,7 +40,14 @@ class GitEvents extends Component {
     const { selectedUser, events, isFetching, lastUpdated } = this.props;
     return (
       <div className={styles.mainContainer}>
-        <ChangeUser searchUser={this.handleChange} handleClick={this.handleRefreshClick} />
+        <div className={styles.headContainer}>
+          <div className={styles.title}>
+            <h2>Most Recent GitHub Push Events</h2>
+          </div>
+          <div className={styles.changeUser}>
+            <ChangeUser searchUser={this.handleChange} handleClick={this.handleRefreshClick} />
+          </div>
+        </div>
         {events.length > 0 && <DisplayEvents theEvents={events} />}
       </div>
     );
