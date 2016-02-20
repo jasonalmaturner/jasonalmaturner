@@ -48,7 +48,10 @@ class GitEvents extends Component {
             <ChangeUser searchUser={this.handleChange} handleClick={this.handleRefreshClick} />
           </div>
         </div>
-        {events.length > 0 && <DisplayEvents theEvents={events} />}
+        <div className={styles.contentContainer}>
+          {events.length > 0 && <DisplayEvents theEvents={events} />}
+          {isFetching && <img src='images/ripple.gif'/>}
+        </div>
       </div>
     );
   }

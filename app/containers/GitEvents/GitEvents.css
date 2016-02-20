@@ -7,6 +7,7 @@
 
 .headContainer {
   margin: 0 auto;
+  max-height: 12%;
 }
 
 .title {
@@ -15,6 +16,11 @@
 }
 
 .changeUser {
+  display: flex;
+  justify-content: center;
+}
+
+.contentContainer {
   display: flex;
   justify-content: center;
 }
