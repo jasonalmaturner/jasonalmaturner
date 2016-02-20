@@ -33,7 +33,7 @@ function events(state = {
         },
       };
     case RECEIVE_EVENTS:
-      console.log(22222, 'receive events')
+      console.log(22222, 'receive events');
       return {
         ...state,
         ...{
@@ -43,17 +43,18 @@ function events(state = {
           lastUpdated: action.receiveEvents,
         },
       };
-    case HANDLE_ERROR:
-      console.log(11111, action);
-      return {
-        ...state,
-        ...{
-          isFetching: false,
-          didInvalidate: false,
-          events: [],
-          error: action.error,
-        },
-      };
+
+    // case HANDLE_ERROR:
+    //   console.log(11111, action, state);
+    //   return {
+    //     ...state,
+    //     ...{
+    //       isFetching: false,
+    //       didInvalidate: false,
+    //       events: [],
+    //       error: action.err,
+    //     },
+    //   };
     default:
       return state;
   }
@@ -64,6 +65,11 @@ export function eventsByUser(state = {}, action) {
     case INVALIDATE_USER:
     case RECEIVE_EVENTS:
     case HANDLE_ERROR:
+
+      // console.log(444444, 'where am i', action, state);
+      // return {
+      //   [action.user]: events(state[action.user], action),
+      // };
     case REQUEST_EVENTS:
       return {
         [action.user]: events(state[action.user], action),

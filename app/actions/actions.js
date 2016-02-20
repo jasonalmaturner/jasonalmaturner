@@ -36,22 +36,25 @@ export function receiveEvents(user = 'jasonalmaturner', events) {
   };
 }
 
-export function handleError(err) {
-  return {
-    type: HANDLE_ERROR,
-    err,
-  };
-}
+// export function handleError(err) {
+//   console.log(77777777, err);
+//   return {
+//     type: HANDLE_ERROR,
+//     err,
+//   };
+// }
 
 function fetchEvents(user = 'jasonalmaturner') {
   return dispatch => {
     dispatch(requestEvents(user));
     axios.get(`api/events?user=${user}`).then(res =>
       dispatch(receiveEvents(user, res.data))
-    ).catch(err => {
-      console.log(55555, err);
-      return dispatch(handleError(err.data));
-    });
+    );
+
+    // .catch(err => {
+    //   console.log(55555, err);
+    //   return dispatch(handleError(err.data));
+    // });
   };
 }
 
