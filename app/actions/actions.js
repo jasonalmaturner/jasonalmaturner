@@ -37,7 +37,6 @@ export function receiveEvents(user = 'jasonalmaturner', events) {
 }
 
 export function handleError(user, err) {
-  console.log(77777777, err);
   return {
     type: HANDLE_ERROR,
     user,
@@ -48,22 +47,17 @@ export function handleError(user, err) {
 
 function fetchEvents(user = 'jasonalmaturner') {
   return dispatch => {
-    console.log('fetch events', user);
     dispatch(requestEvents(user));
     axios.get(`api/events?user=${user}`).then(res => {
-      console.log('axios response', res);
       dispatch(receiveEvents(user, res.data));
     }).catch(err => {
-      console.log('axios error', err);
       return dispatch(handleError(user, err.data));
     });
   };
 }
 
 function shouldFetchEvents(state, user) {
-  console.log('***********************', state, user);
   const posts = state.eventsByUser[user];
-  // const error = state.eventsByUser[user].
   if (!posts) {
     return true;
   } else if (posts.isFetching) {

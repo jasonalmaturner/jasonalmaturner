@@ -63,11 +63,6 @@ export function eventsByUser(state = {}, action) {
     case INVALIDATE_USER:
     case RECEIVE_EVENTS:
     case HANDLE_ERROR:
-
-      // return {
-      //   ...state,
-      //   [action.user]: events(state[action.user], action),
-      // };
     case REQUEST_EVENTS:
       return {
         ...state,

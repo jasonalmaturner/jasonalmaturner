@@ -14,20 +14,17 @@ class GitEvents extends Component {
 
   componentDidMount() {
     const { dispatch, selectedUser } = this.props;
-    console.log(11111111, selectedUser);
     dispatch(fetchEventsIfNeeded(selectedUser));
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.selectedUser !== this.props.selectedUser) {
       const { dispatch, selectedUser } = nextProps;
-      console.log(222222222, selectedUser);
       dispatch(fetchEventsIfNeeded(selectedUser));
     }
   }
 
   handleChange(nextUser) {
-    console.log(333333333, nextUser);
     this.props.dispatch(selectUser(nextUser));
   }
 
