@@ -14,17 +14,20 @@ class GitEvents extends Component {
 
   componentDidMount() {
     const { dispatch, selectedUser } = this.props;
+    console.log(11111111, selectedUser);
     dispatch(fetchEventsIfNeeded(selectedUser));
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.selectedUser !== this.props.selectedUser) {
       const { dispatch, selectedUser } = nextProps;
+      console.log(222222222, selectedUser);
       dispatch(fetchEventsIfNeeded(selectedUser));
     }
   }
 
   handleChange(nextUser) {
+    console.log(333333333, nextUser);
     this.props.dispatch(selectUser(nextUser));
   }
 
@@ -37,7 +40,7 @@ class GitEvents extends Component {
   }
 
   render() {
-    const { selectedUser, events, isFetching, lastUpdated } = this.props;
+    const { selectedUser, events, isFetching, lastUpdated, error } = this.props;
     return (
       <div className={styles.mainContainer}>
         <div className={styles.headContainer}>
@@ -51,6 +54,7 @@ class GitEvents extends Component {
         <div className={styles.contentContainer}>
           {events.length > 0 && <DisplayEvents theEvents={events} />}
           {isFetching && <img src='images/ripple.gif'/>}
+          {error && error.message}
         </div>
       </div>
     );
@@ -71,14 +75,17 @@ function mapStateToProps(state) {
     isFetching,
     lastUpdated,
     events,
+    error,
   } = eventsByUser[selectedUser] || {
     isFetching: true,
     events: [],
+    error: false,
   };
 
   return {
     selectedUser,
     events,
+    error,
     isFetching,
     lastUpdated,
   };

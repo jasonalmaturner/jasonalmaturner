@@ -1,5 +1,7 @@
 import { combineReducers } from 'redux';
-import { REQUEST_EVENTS, RECEIVE_EVENTS, SELECT_USER, INVALIDATE_USER, HANDLE_ERROR } from '../actions/actions';
+import {
+  REQUEST_EVENTS, RECEIVE_EVENTS,
+  SELECT_USER, INVALIDATE_USER, HANDLE_ERROR } from '../actions/actions';
 
 export function selectedUser(state = 'jasonalmaturner', action) {
   switch (action.type) {
@@ -33,7 +35,6 @@ function events(state = {
         },
       };
     case RECEIVE_EVENTS:
-      console.log(22222, 'receive events');
       return {
         ...state,
         ...{
@@ -43,18 +44,15 @@ function events(state = {
           lastUpdated: action.receiveEvents,
         },
       };
-
-    // case HANDLE_ERROR:
-    //   console.log(11111, action, state);
-    //   return {
-    //     ...state,
-    //     ...{
-    //       isFetching: false,
-    //       didInvalidate: false,
-    //       events: [],
-    //       error: action.err,
-    //     },
-    //   };
+    case HANDLE_ERROR:
+      return {
+        ...state,
+        ...{
+          isFetching: false,
+          didInvalidate: false,
+          error: action.err,
+        },
+      };
     default:
       return state;
   }
@@ -66,12 +64,13 @@ export function eventsByUser(state = {}, action) {
     case RECEIVE_EVENTS:
     case HANDLE_ERROR:
 
-      // console.log(444444, 'where am i', action, state);
       // return {
+      //   ...state,
       //   [action.user]: events(state[action.user], action),
       // };
     case REQUEST_EVENTS:
       return {
+        ...state,
         [action.user]: events(state[action.user], action),
       };
     default:
