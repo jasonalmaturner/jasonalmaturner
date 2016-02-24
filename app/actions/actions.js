@@ -1,3 +1,5 @@
+// GitEvents actions
+
 import axios from 'axios';
 
 export const REQUEST_EVENTS = 'REQUEST_EVENTS';
@@ -50,9 +52,9 @@ function fetchEvents(user = 'jasonalmaturner') {
   return dispatch => {
     dispatch(requestEvents(user));
     axios.get(`api/events?user=${user}`).then(res => {
-      dispatch(receiveEvents(user, res.data));
+      return dispatch(receiveEvents(user, res.data));
     }).catch(err => {
-      console.log(22222, err);
+      console.log('GitEvents axios error', err);
       return dispatch(handleError(user, err.data));
     });
   };

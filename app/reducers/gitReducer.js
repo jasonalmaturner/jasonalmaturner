@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux';
+// import { combineReducers } from 'redux';
 import {
   REQUEST_EVENTS, RECEIVE_EVENTS,
   SELECT_USER, INVALIDATE_USER, HANDLE_ERROR } from '../actions/actions';

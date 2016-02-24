@@ -52,7 +52,7 @@ class GitEvents extends Component {
           {events.length > 0 && !isFetching && <DisplayEvents theEvents={events} />}
           {isFetching && <img src='images/ripple.gif'/>}
           {error && <div className={styles.error}>{error.message}</div>}
-          {events.length < 1 && !isFetching &&
+          {events.length < 1 && !isFetching && !error &&
             <div className={styles.error}>
               No recent push events found
             </div>}
