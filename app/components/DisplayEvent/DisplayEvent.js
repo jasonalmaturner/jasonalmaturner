@@ -31,7 +31,6 @@ function isPush(event, repo) {
 
 const DisplayEvent = ({ event }) => {
   const createdAt = new Date(event.created_at);
-  console.log(88888888888, typeof createdAt, createdAt);
   return (
     <div className={styles.eventContainer}>
       <a className={styles.repo} target='_blank' href={`https://github.com/${event.repo.name}`}>
@@ -40,7 +39,7 @@ const DisplayEvent = ({ event }) => {
       <div>
         {isPush(event, event.repo.name)}
       </div>
-      <div>
+      <div className={styles.relativeDate}>
         <FormattedRelative value={createdAt} />
       </div>
     </div>
