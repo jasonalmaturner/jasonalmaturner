@@ -14,6 +14,7 @@ function isPush(event, repo) {
 
   return event.payload.commits.map(commit => (
     <ul key={commit.sha}>
+      Author:
       {commit.author.name}
       <p>
         <a
@@ -28,8 +29,10 @@ function isPush(event, repo) {
 
 const DisplayEvent = ({ event }) => (
   <div className={styles.eventContainer}>
-    <a target='_blank' href={`https://github.com/${event.repo.name}`}>
-      {event.repo.name}
+    Repo:
+    <br />
+    <a className={styles.repo} target='_blank' href={`https://github.com/${event.repo.name}`}>
+      <h5>{event.repo.name}</h5>
     </a>
     <div>
       {isPush(event, event.repo.name)}
