@@ -49,7 +49,7 @@ class GitEvents extends Component {
           </div>
         </div>
         <div className={styles.contentContainer}>
-          {events.length > 0 && <DisplayEvents theEvents={events} />}
+          {events.length > 0 && !isFetching && <DisplayEvents theEvents={events} />}
           {isFetching && <img src='images/ripple.gif'/>}
           {error && error.message}
         </div>

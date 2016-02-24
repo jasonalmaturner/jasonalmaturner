@@ -22,5 +22,7 @@
 
 .contentContainer {
   display: flex;
+  max-height: 88%;
+  overflow-y: scroll;
   justify-content: center;
 }

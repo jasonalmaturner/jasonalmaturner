@@ -16,14 +16,18 @@ function isPush(event, repo) {
     <ul key={commit.sha}>
       {commit.author.name}
       <p>
-        <a target='_blank' href={`https://github.com/${repo}/commit/${commit.sha}`}>{commit.message}</a>
+        <a
+          target='_blank'
+          href={`https://github.com/${repo}/commit/${commit.sha}`}>
+          {commit.message}
+        </a>
       </p>
     </ul>
   ));
 }
 
 const DisplayEvent = ({ event }) => (
-  <div>
+  <div className={styles.eventContainer}>
     <a target='_blank' href={`https://github.com/${event.repo.name}`}>
       {event.repo.name}
     </a>

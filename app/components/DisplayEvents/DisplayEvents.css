@@ -1,7 +1,6 @@
 .eventsContainer {
-  max-height: 88%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  overflow-x: scroll;
+  justify-content: center;
+  align-items: center;
 }
