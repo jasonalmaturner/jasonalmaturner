@@ -7,10 +7,6 @@ import DisplayEvent from '../DisplayEvent/DisplayEvent';
 // just commits.
 
 const DisplayEvents = ({ theEvents }) => {
-  if (!theEvents[0]) {
-    return <div>Loading</div>;
-  }
-
   const mappedEvents = theEvents.map((theEvent, i) =>
     <DisplayEvent event={theEvent} key={theEvent.id} />
   );

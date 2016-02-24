@@ -26,3 +26,7 @@
   overflow-y: scroll;
   justify-content: center;
 }
+
+.error {
+  color: #AA3939;
+}

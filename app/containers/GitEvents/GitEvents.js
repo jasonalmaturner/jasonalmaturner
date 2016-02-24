@@ -51,7 +51,7 @@ class GitEvents extends Component {
         <div className={styles.contentContainer}>
           {events.length > 0 && !isFetching && <DisplayEvents theEvents={events} />}
           {isFetching && <img src='images/ripple.gif'/>}
-          {error && error.message}
+          {error && <div className={styles.error}>{error.message}</div>}
         </div>
       </div>
     );
