@@ -16,3 +16,20 @@ a:link {
 a:visited {
   color: white;
 }
+
+.repo h4 {
+  margin: 0;
+}
+
+.author {
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+.message {
+  margin-top: 0.3em;
+}
+
+ul {
+  padding-left: 1em;
+}

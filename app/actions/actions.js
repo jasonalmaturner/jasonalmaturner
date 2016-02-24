@@ -37,6 +37,7 @@ export function receiveEvents(user = 'jasonalmaturner', events) {
 }
 
 export function handleError(user, err) {
+  console.log(11111, err);
   return {
     type: HANDLE_ERROR,
     user,
@@ -51,6 +52,7 @@ function fetchEvents(user = 'jasonalmaturner') {
     axios.get(`api/events?user=${user}`).then(res => {
       dispatch(receiveEvents(user, res.data));
     }).catch(err => {
+      console.log(22222, err);
       return dispatch(handleError(user, err.data));
     });
   };
