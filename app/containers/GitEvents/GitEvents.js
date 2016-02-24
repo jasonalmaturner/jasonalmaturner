@@ -42,7 +42,7 @@ class GitEvents extends Component {
       <div className={styles.mainContainer}>
         <div className={styles.headContainer}>
           <div className={styles.title}>
-            <h2>Most Recent GitHub Push Events</h2>
+            <h2>Recent GitHub Push Events</h2>
           </div>
           <div className={styles.changeUser}>
             <ChangeUser searchUser={this.handleChange} handleClick={this.handleRefreshClick} />
@@ -52,6 +52,10 @@ class GitEvents extends Component {
           {events.length > 0 && !isFetching && <DisplayEvents theEvents={events} />}
           {isFetching && <img src='images/ripple.gif'/>}
           {error && <div className={styles.error}>{error.message}</div>}
+          {events.length < 1 && !isFetching &&
+            <div className={styles.error}>
+              No recent push events found
+            </div>}
         </div>
       </div>
     );

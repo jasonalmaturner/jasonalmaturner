@@ -5,6 +5,7 @@
 
 import React, { PropTypes } from 'react';
 import styles from './DisplayEvent.css';
+import { FormattedRelative } from 'react-intl';
 
 function isPush(event, repo) {
   if (!event.payload.commits) {
@@ -28,16 +29,23 @@ function isPush(event, repo) {
   ));
 }
 
-const DisplayEvent = ({ event }) => (
-  <div className={styles.eventContainer}>
-    <a className={styles.repo} target='_blank' href={`https://github.com/${event.repo.name}`}>
-      <h4>{event.repo.name}</h4>
-    </a>
-    <div>
-      {isPush(event, event.repo.name)}
+const DisplayEvent = ({ event }) => {
+  const createdAt = new Date(event.created_at);
+  console.log(88888888888, typeof createdAt, createdAt);
+  return (
+    <div className={styles.eventContainer}>
+      <a className={styles.repo} target='_blank' href={`https://github.com/${event.repo.name}`}>
+        <h4>{event.repo.name}</h4>
+      </a>
+      <div>
+        {isPush(event, event.repo.name)}
+      </div>
+      <div>
+        <FormattedRelative value={createdAt} />
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 DisplayEvent.propTypes = {
   event: PropTypes.object.isRequired,
