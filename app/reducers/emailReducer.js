@@ -4,5 +4,24 @@ import {
 
 export function sendEmail(state = {
   isSending: false,
-  error: null
-})
+  error: null,
+  status: null,
+  rejectReason: null,
+}, action) {
+  switch (action.type) {
+    case REQUEST_SEND_EMAIL:
+      return {
+        ...state,
+        ...{
+          isSending: true,
+        },
+      };
+    case RECEIVE_RESPONSE:
+      return {
+        ...state,
+        ...{
+          
+        }
+      }
+  }
+}

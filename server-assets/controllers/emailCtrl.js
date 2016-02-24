@@ -18,8 +18,13 @@ export default {
         ],
       },
     }, result => {
-      console.log(111111, result);
-      return res.json(result);
+      const status = result[0].status;
+      const reason = result[0].reject_reason;
+      if (status === 'rejected' || status === 'invalid') {
+        return res.status(500).json(result[0]);
+      }
+
+      return res.json(result[0]);
     }, err => res.status(500).json(err));
   },
 };

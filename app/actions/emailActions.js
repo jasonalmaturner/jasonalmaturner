@@ -13,11 +13,10 @@ export function requestSendEmail(message, fromName, fromEmail) {
   };
 }
 
-export function receiveResponse(status, rejectReason) {
+export function receiveResponse(status) {
   return {
     type: RECEIVE_RESPONSE,
     status,
-    rejectReason,
   };
 }
 
@@ -36,7 +35,7 @@ export function sendEmail(message, fromName, fromEmail) {
       fromName,
       fromEmail,
     }).then(res => {
-      return dispatch(receiveResponse(res.data.status, res.data.reject_reason));
+      return dispatch(receiveResponse(res.data.status));
     }).catch(err => {
       console.log('email error', err);
       return dispatch(handleEmailError(err));
