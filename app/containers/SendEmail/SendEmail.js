@@ -25,3 +25,34 @@ class SendEmail extends Component {
     );
   }
 }
+
+SendEmail.propTypes = {
+  error: PropTypes.object,
+  isSending: PropTypes.bool.isRequired,
+  rejectReason: PropTypes.string,
+  status: PropTypes.string,
+};
+
+function mapStateToProps(state) {
+  const { sendEmail } = state;
+  const {
+    error,
+    isSending,
+    rejectReason,
+    status,
+  } = sendEmail || {
+    error: null,
+    isSending: false,
+    status: null,
+    rejectReason: null,
+  };
+
+  return {
+    error,
+    isSending,
+    rejectReason,
+    status,
+  };
+}
+
+export default connect(mapStateToProps)(SendEmail);
