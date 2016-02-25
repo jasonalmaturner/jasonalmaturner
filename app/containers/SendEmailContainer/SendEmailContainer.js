@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { sendEmail } from '../../actions/emailActions';
-import styles from './SendEmail.css';
+import styles from './SendEmailContainer.css';
 
 class SendEmail extends Component {
   constructor(props) {
