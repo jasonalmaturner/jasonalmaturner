@@ -4,12 +4,9 @@ export const REQUEST_SEND_EMAIL = 'REQUEST_SEND_EMAIL';
 export const RECEIVE_RESPONSE = 'RECEIVE_RESPONSE';
 export const HANDLE_EMAIL_ERROR = 'HANDLE_EMAIL_ERROR';
 
-export function requestSendEmail(message, fromName, fromEmail) {
+export function requestSendEmail() {
   return {
-    type: SEND_EMAIL,
-    message,
-    fromName,
-    fromEmail,
+    type: REQUEST_SEND_EMAIL,
   };
 }
 
