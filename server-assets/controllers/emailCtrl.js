@@ -1,5 +1,6 @@
 import { Mandrill } from 'mandrill-api';
-const mandrillClient = new Mandrill('iXlKVWwuRP54zNWD8ErILQ');
+import { mandrillApiKey } from '../../config';
+const mandrillClient = new Mandrill(process.env.MANDRILL_API_KEY || mandrillApiKey);
 
 export default {
   sendEmail(req, res) {
