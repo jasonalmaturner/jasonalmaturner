@@ -5,6 +5,7 @@ import styles from './App.css';
 import Name from '../../components/Name/Name';
 import GitEvents from '../GitEvents/GitEvents';
 import { IntlProvider } from 'react-intl';
+import SendEmailContainer from '../SendEmailContainer/SendEmailContainer';
 
 const store = configureStore();
 
@@ -14,6 +15,7 @@ const App = () => (
       <div className={styles.mainContainer}>
         <Name />
         <GitEvents />
+        <SendEmailContainer />
       </div>
     </Provider>
   </IntlProvider>

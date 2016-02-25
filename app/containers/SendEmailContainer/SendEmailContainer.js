@@ -2,8 +2,9 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { sendEmail } from '../../actions/emailActions';
 import styles from './SendEmailContainer.css';
+import SendEmail from '../../components/SendEmail/SendEmail';
 
-class SendEmail extends Component {
+class SendEmailContainer extends Component {
   constructor(props) {
     super(props);
     this.handleSend = this.handleSend.bind(this);
@@ -21,12 +22,16 @@ class SendEmail extends Component {
   render() {
     const { error, isSending, rejectReason, status } = this.props;
     return (
-      <div></div>
+      <div>
+        <SendEmail
+          sendEmail={this.handleSend}
+          handleClick={this.handleRefreshClick} />
+      </div>
     );
   }
 }
 
-SendEmail.propTypes = {
+SendEmailContainer.propTypes = {
   error: PropTypes.object,
   isSending: PropTypes.bool.isRequired,
   rejectReason: PropTypes.string,
@@ -55,4 +60,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(SendEmail);
+export default connect(mapStateToProps)(SendEmailContainer);

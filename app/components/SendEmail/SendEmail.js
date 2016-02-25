@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import styles from './SendEmail.css';
 
-const SendEmail = ({ handleClick, sendEmail }) => {
+const SendEmail = ({ sendEmail, handleClick }) => {
   let message;
   let fromName;
   let fromEmail;
@@ -30,6 +30,11 @@ const SendEmail = ({ handleClick, sendEmail }) => {
       </form>
     </div>
   );
+};
+
+SendEmail.propTypes = {
+  sendEmail: PropTypes.func.isRequired,
+  handleClick: PropTypes.func.isRequired,
 };
 
 export default SendEmail;

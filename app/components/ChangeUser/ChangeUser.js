@@ -23,6 +23,7 @@ const ChangeUser = ({ searchUser, handleClick }) => {
 
 ChangeUser.propTypes = {
   searchUser: PropTypes.func.isRequired,
+  handleClick: PropTypes.func.isRequired,
 };
 
 export default ChangeUser;
