@@ -3,6 +3,7 @@ import axios from 'axios';
 export const REQUEST_SEND_EMAIL = 'REQUEST_SEND_EMAIL';
 export const RECEIVE_RESPONSE = 'RECEIVE_RESPONSE';
 export const HANDLE_EMAIL_ERROR = 'HANDLE_EMAIL_ERROR';
+export const DISPLAY_RESPONSE = 'DISPLAY_RESPONSE';
 
 export function requestSendEmail() {
   return {
@@ -25,6 +26,22 @@ export function handleEmailError(error) {
   };
 }
 
+export function displayResponse(bool = false) {
+  return {
+    type: DISPLAY_RESPONSE,
+    bool,
+  };
+}
+
+function toggleResponse() {
+  return dispatch => {
+    dispatch(displayResponse(true));
+    setTimeout(() => {
+      dispatch(displayResponse(false));
+    }, 5000);
+  };
+}
+
 export function sendEmail(message, fromName, fromEmail) {
   return dispatch => {
     dispatch(requestSendEmail(message, fromName, fromEmail));
@@ -33,10 +50,12 @@ export function sendEmail(message, fromName, fromEmail) {
       fromName,
       fromEmail,
     }).then(res => {
-      return dispatch(receiveResponse(res.data.status, res.data.reject_reason));
+      dispatch(receiveResponse(res.data.status, res.data.reject_reason));
+      return dispatch(toggleResponse());
     }).catch(err => {
       console.log('email error', err);
-      return dispatch(handleEmailError(err.data));
+      dispatch(handleEmailError(err.data));
+      return dispatch(toggleResponse());
     });
   };
 }

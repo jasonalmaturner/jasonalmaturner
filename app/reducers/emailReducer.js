@@ -1,5 +1,5 @@
 import {
-  REQUEST_SEND_EMAIL, RECEIVE_RESPONSE, HANDLE_EMAIL_ERROR
+  REQUEST_SEND_EMAIL, RECEIVE_RESPONSE, HANDLE_EMAIL_ERROR, DISPLAY_RESPONSE,
 } from '../actions/emailActions';
 
 export function sendEmail(state = {
@@ -7,6 +7,7 @@ export function sendEmail(state = {
   error: null,
   status: null,
   rejectReason: null,
+  displayResponse: false,
 }, action) {
   switch (action.type) {
     case REQUEST_SEND_EMAIL:
@@ -31,6 +32,13 @@ export function sendEmail(state = {
         ...{
           isSending: false,
           error: action.error,
+        },
+      };
+    case DISPLAY_RESPONSE:
+      return {
+        ...state,
+        ...{
+          displayResponse: action.bool,
         },
       };
     default:
