@@ -1,4 +1,5 @@
 import axios from 'axios';
+import _ from 'lodash';
 
 export const REQUEST_SEND_EMAIL = 'REQUEST_SEND_EMAIL';
 export const RECEIVE_RESPONSE = 'RECEIVE_RESPONSE';
@@ -33,10 +34,15 @@ export function displayResponse(bool = false) {
   };
 }
 
+let timeoutId;
 function toggleResponse() {
-  return dispatch => {
+  return (dispatch, getState) => {
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+
     dispatch(displayResponse(true));
-    setTimeout(() => {
+    timeoutId = setTimeout(() => {
       dispatch(displayResponse(false));
     }, 8000);
   };

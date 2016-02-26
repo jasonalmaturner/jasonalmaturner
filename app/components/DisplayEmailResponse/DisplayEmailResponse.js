@@ -19,7 +19,7 @@ const DisplayEmailResponse = ({ error, displayResponse, status, rejectReason, is
   }
   return (
     <div className={styles.mainContainer}>
-      {isSending && <img />}
+      {isSending && <img src='images/ripple2.gif'/>}
       <div className={styles[response]}>{displayResponse && status && `Message ${status}`}</div>
       <div className={styles.error}>{displayResponse && rejectReason}</div>
       <div className={styles.error}>{displayResponse && error && 'Something bad happened'}</div>
