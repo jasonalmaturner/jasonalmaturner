@@ -5,7 +5,7 @@ const ChangeUser = ({ searchUser, handleClick }) => {
   let input;
   return (
     <div>
-      <form onSubmit={(e) => {
+      <form className={styles.form} onSubmit={(e) => {
         handleClick(e);
         searchUser(input.value);
         input.value = '';
@@ -15,7 +15,7 @@ const ChangeUser = ({ searchUser, handleClick }) => {
           input = node;
         }
         } type='text' placeholder='Enter GitHub username' />
-      <input className={styles.inputButton} type='submit' value='Submit'/>
+        <input className={styles.inputButton} type='submit' value='Submit'/>
       </form>
     </div>
   );

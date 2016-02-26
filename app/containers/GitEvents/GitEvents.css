@@ -15,6 +15,10 @@
   justify-content: center;
 }
 
+.title h2 {
+  text-align: center;
+}
+
 .changeUser {
   display: flex;
   justify-content: center;
@@ -29,4 +33,32 @@
 
 .error {
   color: #AA3939;
+}
+
+@media (max-width: 374px) {
+  .headContainer {
+    max-height: none;
+  }
+
+  .contentContainer {
+    max-height: 85%;
+  }
+}
+
+@media (max-width: 352px) {
+  .contentContainer {
+    max-height: 82%;
+  }
+}
+
+@media (max-width: 207px) {
+  .contentContainer {
+    max-height: 78%;
+  }
+}
+
+@media (max-width: 175px) {
+  .contentContainer {
+    max-height: 75%;
+  }
 }
