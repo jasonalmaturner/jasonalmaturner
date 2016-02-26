@@ -47,10 +47,12 @@ const SendEmail = ({ sendEmail, handleClick, handleOptions, compliments }) => {
           <Select
 
             placeholder='Pick as many compliments as you can'
+            simpleValue
             multi={true}
             value={compliments}
             options={complimentsOptions}
             onChange={handleOptions}
+            className={styles.select}
            />
           <input className={styles.submitButton} type='submit' value='Send' />
       </form>

@@ -61,3 +61,10 @@ textarea {
   border-style: solid;
   border-color: #003333;
 }
+
+.select {
+  width: 90%;
+  border-radius: 10px;
+  max-width: 550px;
+  min-width: 225px;
+}
