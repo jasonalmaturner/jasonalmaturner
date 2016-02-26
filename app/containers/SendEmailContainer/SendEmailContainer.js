@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { sendEmail } from '../../actions/emailActions';
 import styles from './SendEmailContainer.css';
 import SendEmail from '../../components/SendEmail/SendEmail';
+import DisplayEmailResponse from '../../components/DisplayEmailResponse/DisplayEmailResponse';
 
 class SendEmailContainer extends Component {
   constructor(props) {
@@ -20,12 +21,18 @@ class SendEmailContainer extends Component {
   }
 
   render() {
-    const { error, isSending, rejectReason, status } = this.props;
+    const { error, isSending, rejectReason, status, displayResponse } = this.props;
     return (
       <div className={styles.mainContainer}>
         <SendEmail
           sendEmail={this.handleSend}
           handleClick={this.handleRefreshClick} />
+        <DisplayEmailResponse
+          isSending={isSending}
+          error={error}
+          status={status}
+          rejectReason={rejectReason}
+          displayResponse={displayResponse} />
       </div>
     );
   }
@@ -45,11 +52,13 @@ function mapStateToProps(state) {
     isSending,
     rejectReason,
     status,
+    displayResponse,
   } = sendEmail || {
     error: null,
     isSending: false,
     status: null,
     rejectReason: null,
+    displayResponse: false,
   };
 
   return {
@@ -57,6 +66,7 @@ function mapStateToProps(state) {
     isSending,
     rejectReason,
     status,
+    displayResponse,
   };
 }
 

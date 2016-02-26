@@ -1,0 +1,15 @@
+.mainContainer {
+  height: 20px;
+}
+
+.good {
+  color: #55AA55;
+}
+
+.neutral {
+  color: #FFD1AA;
+}
+
+.error {
+  color: #D46A6A;
+}

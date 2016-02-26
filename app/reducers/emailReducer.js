@@ -15,6 +15,7 @@ export function sendEmail(state = {
         ...state,
         ...{
           isSending: true,
+          error: null,
         },
       };
     case RECEIVE_RESPONSE:

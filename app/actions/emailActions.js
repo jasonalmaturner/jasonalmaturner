@@ -38,7 +38,7 @@ function toggleResponse() {
     dispatch(displayResponse(true));
     setTimeout(() => {
       dispatch(displayResponse(false));
-    }, 5000);
+    }, 8000);
   };
 }
 
