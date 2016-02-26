@@ -22,7 +22,7 @@ class SendEmailContainer extends Component {
   render() {
     const { error, isSending, rejectReason, status } = this.props;
     return (
-      <div>
+      <div className={styles.mainContainer}>
         <SendEmail
           sendEmail={this.handleSend}
           handleClick={this.handleRefreshClick} />
