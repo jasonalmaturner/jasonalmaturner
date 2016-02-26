@@ -1,24 +1,13 @@
 import React, { PropTypes } from 'react';
 import styles from './SendEmail.css';
 import Select from 'react-select';
+import { complimentsOptions } from './compliments';
 
 const SendEmail = ({ sendEmail, handleClick, handleOptions, compliments }) => {
   let message;
   let fromName;
   let fromEmail;
   let selectedCompliments = [];
-  const complimentsOptions = [
-    {
-      value: 'a',
-      label: 'A',
-    }, {
-      value: 'b',
-      label: 'B',
-    }, {
-      value: 'c',
-      label: 'C',
-    },
-  ];
   return (
     <div className={styles.formContainer}>
       <form className={styles.emailForm} onSubmit={e => {
