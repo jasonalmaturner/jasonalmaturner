@@ -5,6 +5,7 @@ export const REQUEST_SEND_EMAIL = 'REQUEST_SEND_EMAIL';
 export const RECEIVE_RESPONSE = 'RECEIVE_RESPONSE';
 export const HANDLE_EMAIL_ERROR = 'HANDLE_EMAIL_ERROR';
 export const DISPLAY_RESPONSE = 'DISPLAY_RESPONSE';
+export const SELECT_COMPLIMENTS = 'SELECT_COMPLIMENTS';
 
 export function requestSendEmail() {
   return {
@@ -31,6 +32,13 @@ export function displayResponse(bool = false) {
   return {
     type: DISPLAY_RESPONSE,
     bool,
+  };
+}
+
+export function selectCompliments(compliments = []) {
+  return {
+    type: SELECT_COMPLIMENTS,
+    compliments,
   };
 }
 

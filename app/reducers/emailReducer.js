@@ -1,5 +1,6 @@
 import {
   REQUEST_SEND_EMAIL, RECEIVE_RESPONSE, HANDLE_EMAIL_ERROR, DISPLAY_RESPONSE,
+  SELECT_COMPLIMENTS,
 } from '../actions/emailActions';
 
 export function sendEmail(state = {
@@ -8,6 +9,7 @@ export function sendEmail(state = {
   status: null,
   rejectReason: null,
   displayResponse: false,
+  compliments: [],
 }, action) {
   switch (action.type) {
     case REQUEST_SEND_EMAIL:
@@ -43,6 +45,13 @@ export function sendEmail(state = {
         ...state,
         ...{
           displayResponse: action.bool,
+        },
+      };
+    case SELECT_COMPLIMENTS:
+      return {
+        ...state,
+        ...{
+          compliments: action.compliments,
         },
       };
     default:
