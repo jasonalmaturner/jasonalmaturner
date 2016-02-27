@@ -21,6 +21,7 @@ export function sendEmail(state = {
           status: null,
           rejectReason: null,
           displayResponse: false,
+          compliments: [],
         },
       };
     case RECEIVE_RESPONSE:

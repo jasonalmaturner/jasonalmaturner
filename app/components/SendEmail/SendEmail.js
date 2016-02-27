@@ -36,7 +36,6 @@ const SendEmail = ({ sendEmail, handleClick, handleOptions, compliments }) => {
           <Select
 
             placeholder='Pick as many compliments as you can'
-            simpleValue
             multi={true}
             value={compliments}
             options={complimentsOptions}

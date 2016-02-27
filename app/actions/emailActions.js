@@ -56,11 +56,25 @@ function toggleResponse() {
   };
 }
 
+function buildMessage(message, complimentsArray) {
+  const htmlMessage = `<div>${message}</div><br>`;
+  if (!complimentsArray) {
+    return htmlMessage;
+  }
+
+  let complimentsHtml = '';
+  complimentsArray.forEach((item) => {
+    complimentsHtml += `<li>${item.value}</li>`;
+  });
+  return htmlMessage + complimentsHtml;
+}
+
 export function sendEmail(message, fromName, fromEmail) {
-  return dispatch => {
+  return (dispatch, getState) => {
+    const complimentsToSend = getState().sendEmail.compliments;
     dispatch(requestSendEmail(message, fromName, fromEmail));
     axios.post('/api/email', {
-      message,
+      html: buildMessage(message, complimentsToSend),
       fromName,
       fromEmail,
     }).then(res => {

@@ -6,7 +6,7 @@ export default {
   sendEmail(req, res) {
     mandrillClient.messages.send({
       message: {
-        text: req.body.message,
+        html: req.body.html,
         subject: 'Someone loves you',
         from_email: req.body.fromEmail,
         from_name: req.body.fromName,
