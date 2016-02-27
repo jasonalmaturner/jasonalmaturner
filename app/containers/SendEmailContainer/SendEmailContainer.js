@@ -18,7 +18,6 @@ class SendEmailContainer extends Component {
   }
 
   handleOptions(compliments, a) {
-    console.log(compliments, a);
     this.props.dispatch(selectCompliments(compliments));
   }
 

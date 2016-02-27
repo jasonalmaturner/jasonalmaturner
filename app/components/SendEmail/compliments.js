@@ -2,10 +2,12 @@ export const complimentsOptions = [
   {
     value: 'Your hair is really on point',
     label: 'Your hair is really on point',
-  }, {
+  },
+  {
     value: 'I find your raw athleticism very attractive',
     label: 'I find your raw athleticism very attractive',
-  }, {
+  },
+  {
     value: 'The world would be better if everyone was more like you',
     label: 'The world would be better if everyone was more like you',
   },
@@ -52,5 +54,37 @@ export const complimentsOptions = [
   {
     value: 'You\'re cookies are the best I\'ve ever consumed',
     label: 'You\'re cookies are the best I\'ve ever consumed',
+  },
+  {
+    value: 'You\'re presence makes me feel butterflies in my stomach',
+    label: 'You\'re presence makes me feel butterflies in my stomach',
+  },
+  {
+    value: 'Your domestic skillz are out of this world',
+    label: 'Your domestic skillz are out of this world',
+  },
+  {
+    value: 'I would vote you for president',
+    label: 'I would vote you for president',
+  },
+  {
+    value: 'You\'re voice is almost as sweet as the song of the Western Meadowlark',
+    label: 'You\'re voice is almost as sweet as the song of the Western Meadowlark',
+  },
+  {
+    value: 'You\'re body is a wonderland',
+    label: 'You\'re body is a wonderland',
+  },
+  {
+    value: 'I bet you can divide by zero',
+    label: 'I bet you can divide by zero',
+  },
+  {
+    value: 'You smell nice',
+    label: 'You smell nice',
+  },
+  {
+    value: 'You have a kind heart',
+    label: 'You have a kind heart',
   },
 ];

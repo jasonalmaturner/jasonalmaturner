@@ -12,13 +12,14 @@ const SendEmail = ({ sendEmail, handleClick, handleOptions, compliments }) => {
     <div className={styles.formContainer}>
       <form className={styles.emailForm} onSubmit={e => {
         handleClick(e);
-        console.log(selectedCompliments.value);
         sendEmail(message.value, fromName.value, fromEmail.value);
         message.value = '';
         fromName.value = '';
         fromEmail.value = '';
       }}>
-        <div className={styles.title}>Send me a message</div>
+        <div className={styles.title}>
+          Send me a message, jokes, puns, stories, and/or compliments.
+        </div>
         <div className={styles.inputsContainer}>
           <input className={styles.input} type='email' ref={node => {
 

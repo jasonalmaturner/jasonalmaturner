@@ -4,12 +4,15 @@
 
 .good {
   color: #55AA55;
+  text-align: center;
 }
 
 .neutral {
   color: #FFD1AA;
+  text-align: center;
 }
 
 .error {
   color: #D46A6A;
+  text-align: center;
 }
