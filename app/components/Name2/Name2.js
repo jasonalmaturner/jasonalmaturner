@@ -11,16 +11,12 @@ const Name = () => (
       bgHeight='130%'
       bgWidth='auto'>
         <div className={`${styles.background} ${styles.background2}`}>
-          <a href="#" className={`${styles.icon} ${styles.iconBorder} ${styles.facebook}`}>
-            facebook</a>
-          <a href="#" className={`${styles.icon} ${styles.iconBorder} ${styles.twitter}`}>
-            twitter</a>
-          <a href="#" className={`${styles.icon} ${styles.iconBorder} ${styles.googleplus}`}>
-            google+</a>
-          <a href="#" className={`${styles.icon} ${styles.iconBorder} ${styles.github}`}>
-            github</a>
-          <a href="#" className={`${styles.icon} ${styles.iconBorder} ${styles.rss}`}>
-            rss</a>
+          <div className={styles.iconsContainer}>
+            <a className={`${styles.icons} ${styles.facebook}`} href="#"><span>Facebook</span></a>
+            <a className={`${styles.icons} ${styles.twitter}`} href="#"><span>Twitter</span></a>
+            <a className={`${styles.icons} ${styles.github}`} href="#"><span>Github</span></a>
+            <a className={`${styles.icons} ${styles.linkedIn}`} href="#"><span>LinkedIn</span></a>
+          </div>
         </div>
     </Parallax>
   </div>
