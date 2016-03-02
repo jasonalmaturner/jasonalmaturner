@@ -1,0 +1,30 @@
+.meContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 50%;
+}
+
+.meContent {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 20px;
+}
+
+.flexItem {
+  width: 45%;
+  min-width: 200px;
+}
+
+@media (max-width:700px) {
+  .meContent {
+    flex-direction: column;
+  }
+
+  .flexItem {
+    width: 100%;
+  }
+}

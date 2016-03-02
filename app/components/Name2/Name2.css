@@ -1,0 +1,124 @@
+.contentContainer {
+  height: calc(100% + 300px);
+  margin-top: -300px;
+  min-width: 100%;
+  align-items: center;
+}
+
+.parallax {
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+
+.background {
+  /*height: calc(100% + 300px);*/
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: white;
+  margin-top: 300px;
+}
+
+.background2 {
+  color: red;
+}
+
+.iconsContainer {
+  display: flex;
+  justify-content: center;
+  /*align-items: center;*/
+  flex-wrap: wrap;
+}
+
+.icons {
+  color:#fff;
+  background: transparent;
+  border-radius:10px;
+  border: solid;
+  border-width: thick;
+  text-align:center;
+  text-decoration:none;
+  font-family:fontawesome;
+  position: relative;
+  display: inline-block;
+  width:80px;
+  height:56px;
+  padding-top:24px;
+  margin: 10px;
+  -o-transition:all .5s;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  transition: all .5s;
+   -webkit-font-smoothing: antialiased;
+}
+
+.icons:hover {
+  background: #4F7AAF;
+}
+
+/* pop-up text */
+
+.icons span {
+  color:#666;
+  position:absolute;
+  font-family:sans-serif;
+  bottom:0;
+  left:-25px;
+  right:-25px;
+  padding:5px 7px;
+  z-index:-1;
+  font-size:14px;
+  border-radius:2px;
+  background:#fff;
+  visibility:hidden;
+  opacity:0;
+  -o-transition:all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -webkit-transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -moz-transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* pop-up text arrow */
+
+/*.icons span:before {
+  content:'';
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #fff;
+  position:absolute;
+  bottom:-5px;
+  left:40px;
+}*/
+
+/* text pops up when icon is in hover state */
+
+/*.icons:hover span {
+  bottom:100px;
+  visibility:visible;
+  opacity:1;
+  z-index: 1;
+}*/
+
+/* font awesome icons */
+
+.facebook:before {
+  font-size: 2em;
+  content:'\f09a';
+}
+.twitter:before {
+  font-size: 2em;
+  content:'\f099';
+}
+.github:before {
+  font-size: 2em;
+  content:'\f113';
+}
+.linkedIn:before {
+  font-size: 2em;
+  content:'\f0e1';
+}
