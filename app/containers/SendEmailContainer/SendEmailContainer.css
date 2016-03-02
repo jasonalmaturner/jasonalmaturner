@@ -1,5 +1,5 @@
 .mainContainer {
-  height: 50%;
+  min-height: 50%;
   width: 100%;
   background-color: #396089;
   display: flex;
