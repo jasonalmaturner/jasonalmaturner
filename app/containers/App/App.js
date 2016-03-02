@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import configureStore from '../../store/configureStore';
 import styles from './App.css';
 import Name from '../../components/Name2/Name2';
+import Me from '../../components/Me/Me';
 
 // import GitEvents from '../GitEvents/GitEvents';
 // import { IntlProvider } from 'react-intl';
@@ -14,6 +15,7 @@ const App = () => (
   <Provider store={store}>
     <div className={styles.mainContainer}>
       <Name />
+      <Me />
       <SendEmailContainer />
     </div>
   </Provider>
