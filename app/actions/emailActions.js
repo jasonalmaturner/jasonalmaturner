@@ -1,5 +1,4 @@
 import axios from 'axios';
-import _ from 'lodash';
 
 export const REQUEST_SEND_EMAIL = 'REQUEST_SEND_EMAIL';
 export const RECEIVE_RESPONSE = 'RECEIVE_RESPONSE';
